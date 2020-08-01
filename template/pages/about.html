@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="aboutus-wrapper">
+                            {% if about %}
+
+                            <h1 class="mt-5">
+                                {{ about.title }}
+                            </h1>
+                            <p class="font-weight-600 fs-15">
+                                {{ about.paragraph_1 }}
+                            </p>
+                            <p class="font-weight-600 fs-15 mb-5 mt-4">
+                                {{ about.paragraph_2 }}
+                            </p>
+                            <img
+                                    src="{{ about.photo_main.url }}"
+                                    alt="banner"
+                                    class="img-fluid mb-5"
+                            />
+
+                            <p class="font-weight-600 fs-15 text-center">
+                                {{ about.paragraph_3 }}
+                            </p>
+                            <p class="font-weight-600 fs-15 mb-5 mt-4 text-center">
+                                {{ about.paragraph_4 }}
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

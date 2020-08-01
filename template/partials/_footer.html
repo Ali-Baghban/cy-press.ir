@@ -1,0 +1,120 @@
+{% load static %}
+<footer>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <img src="{% static 'main/assets/images/logo.png' %}" style="width: 50%;"
+                         class="footer-logo" alt="Cypress"/>
+                    <h5 class="font-weight-normal mt-4 mb-5">
+                        Newspaper is your news, entertainment, music fashion website. We
+                        provide you with the latest breaking news related to your desire.
+                    </h5>
+                    <ul class="social-media mb-3">
+                        <li>
+                            <a href="#">
+                                <i class="mdi mdi-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="mdi mdi-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/alibaghban_ir">
+                                <i class="mdi mdi-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="font-weight-bold mb-3">RECENT POSTS</h3>
+                    {% if latest_news %}
+                    {% for news in latest_news %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="footer-border-bottom pb-2">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img
+                                                src="{{ news.photo_main.url }}"
+                                                alt="{{ news.title }}"
+                                                class="img-fluid"
+                                        />
+                                    </div>
+                                    <div class="col-9">
+
+                                        <h5 class="font-weight-600">
+                                            {{ news.title }}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="footer-border-bottom pb-2">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img
+                                                src="{% static 'main/assets/images/logo.png' %}"
+                                                alt="Cy-press.ir"
+                                                class="img-fluid"
+                                        />
+                                    </div>
+                                    <div class="col-9">
+
+                                        <h5 class="font-weight-600">
+                                            Cy-press.ir
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-3">
+                    <h3 class="font-weight-bold mb-3">CATEGORIES</h3>
+                    {% if footer_cat %}
+                    {% for category in footer_cat%}
+
+                    <div class="footer-border-bottom pb-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'category' category.title %}"
+                               style="text-decoration: none;color: white;">
+                                <h5 class="mb-0 font-weight-600">{{ category.title }}</h5>
+                            </a>
+                            <div class="count"></div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="d-sm-flex justify-content-between align-items-center">
+                        <div class="fs-14 font-weight-600">
+                            © 2020 @ <a href="https://www.alibaghban.ir/" target="_blank" class="text-white">
+                            Alibaghban.ir |</a> All rights reserved.
+                        </div>
+                        <div class="fs-14 font-weight-600">
+                            Handcrafted by <a href="https://instagram.com/ali_baghban.ir/" target="_blank"
+                                              class="text-white">Ali Baghban</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
