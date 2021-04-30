@@ -40,7 +40,7 @@ pywin32==228
 query-string==0.0.0
 request==0.0.0
 requests==2.24.0
-rsa==4.6
+rsa==4.7
 six==1.15.0
 soupsieve==2.0.1
 SpeechRecognition==3.8.1
