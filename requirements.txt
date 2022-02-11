@@ -25,7 +25,7 @@ Pillow==7.2.0
 pipwin==0.5.0
 post==0.0.0
 prompt-toolkit==3.0.5
-protobuf==3.12.2
+protobuf==3.15.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 PyAudio @ file:///C:/Users/Raha/pipwin/PyAudio-0.2.11-cp37-cp37m-win32.whl
